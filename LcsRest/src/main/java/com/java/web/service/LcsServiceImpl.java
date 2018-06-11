@@ -14,12 +14,13 @@ public class LcsServiceImpl implements LcsService {
 	@Override
 	public List<LCSDto> findLcs(List<String> setOfStrings) {
 		String lcs = lcs(new ArrayList<>(setOfStrings));
-
+                
 		List<LCSDto> lcsResList = new ArrayList<>();
 		LCSDto lcsDto = new LCSDto();
 		lcsDto.setValue(lcs);
 		lcsResList.add(lcsDto);
-		
+		LcsRes lcsRes=new LcsRes();
+		lcsRes.setLcs(lcsResList);
 		return lcsResList;
 	}
 
